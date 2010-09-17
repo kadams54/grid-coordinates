@@ -70,14 +70,14 @@ $grid-width: $grid-columns * $grid-pixels + $grid-columns * $grid-gutter-width;
     @include nested-grid-container; }
   .grid-full {
     @include grid-full; }
+  @for $i from 1 through $grid-columns {
+    .grid-#{$i} {
+      @include grid($i); } }
   @for $i from 1 through $grid-columns - 1 {
     .grid-prefix-#{$i} {
       @include grid-prefix($i); } }
   @for $i from 1 through $grid-columns - 1 {
     .grid-suffix-#{$i} {
       @include grid-suffix($i); } }
-  @for $i from 1 through $grid-columns {
-    .grid-#{$i} {
-      @include grid($i); } }
   /* End Grid-Coordinates
    * Tweet about this - http://adamstac.com/grid-coordinates */ }
